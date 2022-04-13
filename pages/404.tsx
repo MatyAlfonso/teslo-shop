@@ -16,7 +16,7 @@ const Custom404Page = () => {
                     404 |
                 </Typography>
                 <Typography marginLeft={2}>
-                    We couldn't find a page here
+                    We could not find a page here
                 </Typography>
             </Box>
         </ShopLayout>

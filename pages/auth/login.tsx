@@ -25,7 +25,7 @@ const LoginPage = () => {
                     </Grid>
                     <Grid item xs={12} display='flex' justifyContent='end'>
                         <NextLink href='/auth/register' passHref>
-                            <Link underline='always'>Don't have an account? Create one</Link>
+                            <Link underline='always'>Do not have an account? Create one</Link>
                         </NextLink>
                     </Grid>
                 </Grid>
