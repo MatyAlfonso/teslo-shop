@@ -85,7 +85,7 @@ export const CartProvider: FC = ({ children }) => {
         }
 
         dispatch({ type: '[Cart] - Update order summary', payload: orderSummary });
-        console.log('orderSummary', orderSummary);
+        //console.log('orderSummary', orderSummary);
 
     }, [state.cart]);
 

@@ -5,7 +5,7 @@ import { Box, Button, FormControl, Grid, InputLabel, MenuItem, Select, TextField
 import { ShopLayout } from '../../components/layouts';
 import { countries } from '../../utils';
 import Cookies from 'js-cookie';
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import { CartContext } from '../../context';
 
 type FormData = {
@@ -38,9 +38,23 @@ const AddressPage = () => {
 
     const { updateAddress } = useContext(CartContext)
 
-    const { register, handleSubmit, formState: { errors } } = useForm<FormData>({
-        defaultValues: getAddressFromCookies()
+    const { register, handleSubmit, formState: { errors }, reset } = useForm<FormData>({
+        defaultValues: {
+            firstName: '',
+            lastName: '',
+            address: '',
+            address2: '',
+            city: '',
+            zip: '',
+            country: countries[0].code,
+            phone: ''
+        }
     });
+
+    useEffect(() => {
+        reset(getAddressFromCookies());
+    }, [reset])
+
 
     const onSubmitAddress = (data: FormData) => {
         updateAddress(data);
@@ -113,6 +127,7 @@ const AddressPage = () => {
                     <Grid item xs={12} sm={6}>
                         <FormControl fullWidth>
                             <TextField
+                                key={Cookies.get('country') || countries[0].code}
                                 select
                                 variant='filled'
                                 label='Country'
