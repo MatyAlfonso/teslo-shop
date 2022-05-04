@@ -59,7 +59,7 @@ export const SideMenu = () => {
                     {
                         isLoggedIn && (
                             <>
-                            <Typography variant='h5' component='h5' sx={{margin: 2}}> Hello, {user?.name}! </Typography>
+                                <Typography variant='h5' component='h5' sx={{ margin: 2 }}> Hello, {user?.name}! </Typography>
                                 <ListItem button>
                                     <ListItemIcon>
                                         <AccountCircleOutlined />
@@ -67,7 +67,10 @@ export const SideMenu = () => {
                                     <ListItemText primary={'Profile'} />
                                 </ListItem>
 
-                                <ListItem button>
+                                <ListItem
+                                    button
+                                    onClick={() => navigateTo('/orders/history')}
+                                >
                                     <ListItemIcon>
                                         <ConfirmationNumberOutlined />
                                     </ListItemIcon>

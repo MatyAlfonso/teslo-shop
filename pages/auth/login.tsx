@@ -114,6 +114,7 @@ const LoginPage = () => {
                         </Grid>
                         <Grid item xs={12} display='flex' flexDirection='column' justifyContent='end'>
                             <Divider sx={{ width: '100%', mb: 2 }} />
+                            <Typography variant='body2' component='p' sx={{textAlign: 'center', mb: 2}}>Or login with</Typography>
                             {
                                 Object.values(providers).map((provider: any) => {
                                     if (provider.id === 'credentials') return (<div key='credentials'></div>);
