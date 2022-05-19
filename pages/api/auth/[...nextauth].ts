@@ -24,7 +24,7 @@ export default NextAuth({
       clientSecret: process.env.GITHUB_SECRET,
     }),
   ],
-
+  secret: process.env.NEXTAUTH_SECRET, // [next-auth][error][client_fetch_error] solution?
   //Custom Pages
   pages: {
     signIn: '/auth/login',
