@@ -4,7 +4,8 @@ import { IProduct } from '../interfaces';
 const productSchema: Schema = new Schema({
     description: {
         type: String,
-        required: true
+        required: true,
+        default: ''
     },
     images: [
         {
@@ -42,7 +43,8 @@ const productSchema: Schema = new Schema({
     ],
     title: {
         type: String,
-        required: true
+        required: true,
+        default: ''
     },
     type: {
         type: String,
@@ -50,7 +52,8 @@ const productSchema: Schema = new Schema({
         enum: {
             values: ['shirts', 'pants', 'hoodies', 'hats'],
             message: '{VALUE} is not a valid type.'
-        }
+        },
+        default: 'shirts'
     },
     gender: {
         type: String,
@@ -58,7 +61,8 @@ const productSchema: Schema = new Schema({
         enum: {
             values: ['men', 'women', 'kids', 'unisex'],
             message: '{VALUE} is not a valid gender.'
-        }
+        },
+        default: 'unisex'
     }
 }, {
     timestamps: true
