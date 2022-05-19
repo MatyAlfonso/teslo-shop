@@ -21,3 +21,6 @@ Rename the __.env.template__ file to __.env__
 ```
 http://localhost:3000/api/seed
 ```
+Deploy to Vercel.
+
+```
